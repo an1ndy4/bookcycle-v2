@@ -1,0 +1,14 @@
+BookCycle Chat Realtime patch
+
+Extract this archive into the root of the BookCycle Flutter project and allow the files to merge/overwrite at the same paths.
+
+Changed files:
+- lib/services/chat_service.dart
+- lib/controllers/chat_controller.dart
+- lib/models/chat_model.dart
+- lib/views/widgets/chat_screen.dart
+- supabase/migrations/20261112000100_bookcycle_chat_realtime.sql
+- BOOKCYCLE_CHAT_REALTIME_NOTES.md
+
+No pubspec dependency changes are required.
+The main Flutter source is the root lib/ directory. Do not replace it with ios/lib/.
