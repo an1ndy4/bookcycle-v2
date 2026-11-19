@@ -1,0 +1,41 @@
+BOOKCYCLE CHAT REALTIME PATCH - STRUKTUR DIPERBAIKI
+
+PENTING: Isi ZIP ini sudah dimulai langsung dari folder lib/ dan supabase/.
+Jangan menyalin folder induk tambahan.
+
+CARA MENERAPKAN:
+1. Tutup aplikasi Flutter yang sedang berjalan.
+2. Ekstrak ZIP ini ke ROOT proyek Flutter, yaitu folder yang berisi pubspec.yaml.
+3. Jika Windows menanyakan penggabungan folder atau penggantian file, pilih Merge/Replace.
+4. Pastikan file berikut benar-benar tertimpa:
+   - lib/controllers/chat_controller.dart
+   - lib/models/chat_model.dart
+   - lib/services/chat_service.dart
+   - lib/views/widgets/chat_screen.dart
+5. Jangan menaruh file-file tersebut di dalam folder BookCycle_Chat_Realtime_Patch_FIXED/ atau folder lain.
+6. Jalankan dari terminal pada root proyek:
+   flutter pub get
+   flutter analyze
+   flutter run
+
+VERIFIKASI LOKASI:
+Folder proyek/
+  pubspec.yaml
+  lib/
+    controllers/chat_controller.dart
+    models/chat_model.dart
+    services/chat_service.dart
+    views/widgets/chat_screen.dart
+  supabase/
+    migrations/20261112000100_bookcycle_chat_realtime.sql
+
+SQL:
+File migration SQL disertakan untuk konfigurasi Supabase. Jika konfigurasi RLS dan
+publication Realtime belum diterapkan pada project Supabase, buka Supabase Dashboard
+> SQL Editor, lalu jalankan isi file migration tersebut. Jangan jalankan ulang jika
+sudah diterapkan dan diverifikasi.
+
+Catatan:
+Patch ini tidak menambahkan dependency pubspec. Setelah penerapan, lakukan hot restart
+atau hentikan lalu jalankan ulang aplikasi. Hot reload saja tidak cukup untuk memastikan
+subscription Realtime diinisialisasi ulang.
